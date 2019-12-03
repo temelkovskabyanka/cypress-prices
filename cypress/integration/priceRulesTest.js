@@ -13,7 +13,7 @@ describe("Price rules checking  ", () => {
    it("Price rules checking test", () => {
        cy.visit("https://demo.phppointofsale.com/index.php/home");
        priceRulesComponent.loginButton.click();
-       cy.visit("https://demo.phppointofsale.com/index.php/price_rules");
+       cy.visit("");
        priceRulesComponent.searchPriceRulesField.type(priceRulesData.searchPriceRulesField + "{enter}");
        priceRulesComponent.priceRulesText.contains("There are no price rules");
        priceRulesComponent.exitSearchButton.click();
