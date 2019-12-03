@@ -1,22 +1,22 @@
-import Component from "../component/Price rules/Component";
-import Data from "../component/Price rules/Data";
+import Component from "../component/price/Component";
+import Data from "../component/price/Data";
 
 describe("Price rules checking  ", () => {
-   beforeEach(() =>{
-       Cypress.on('uncaught:exception', (err, runnable) => {
-           return false
-       })
+    beforeEach(() => {
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+        })
     });
-   let priceRulesComponent = new Component();
-   let priceRulesData = new Data();
+    let priceRulesComponent = new Component();
+    let priceRulesData = new Data();
 
-   it("Price rules checking test", () => {
-       cy.visit("https://demo.phppointofsale.com/index.php/home");
-       priceRulesComponent.loginButton.click();
-       priceRulesComponent.priceRulesIconButton.contains("Price Rules").click();
-       priceRulesComponent.searchPriceRulesField.type(priceRulesData.searchPriceRulesField + "{enter}");
-       priceRulesComponent.priceRulesText.contains("There are no price rules");
-       priceRulesComponent.exitSearchButton.click();
-       priceRulesComponent.totalPriceRulesText.contains("4");
-   });
+    it("Price rules checking test", () => {
+        cy.visit("https://demo.phppointofsale.com/index.php/home");
+        priceRulesComponent.loginButton.click();
+        priceRulesComponent.priceRulesIconButton.contains("Price Rules").click();
+        priceRulesComponent.searchPriceRulesField.type(priceRulesData.searchPriceRulesField + "{enter}");
+        priceRulesComponent.priceRulesText.contains("There are no price rules");
+        priceRulesComponent.exitSearchButton.click();
+        priceRulesComponent.totalPriceRulesText.contains("4");
+    });
 });
