@@ -1,7 +1,7 @@
 import Component from "../component/Price rules/Component";
 import Data from "../component/Price rules/Data";
 
-describe("Price rules checking", () => {
+describe("Price rules checking  ", () => {
    beforeEach(() =>{
        Cypress.on('uncaught:exception', (err, runnable) => {
            return false
